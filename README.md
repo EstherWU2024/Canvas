@@ -18,11 +18,19 @@ Before installing, make sure you have the following installed on your system:
 ### 2. Clone the Repository
 1. Open a terminal or command prompt.
 2. Run the following command to clone the project repository:
-cd /my/projects
-git clone https://github.com/username/my-awesome-project.git
-cd my-awesome-project
-./install.sh /my/projects/config
----
+   ```bash
+   cd <your-target-directory>
+   git clone https://github.com/<your-username>/<your-repo-name>.git
+   cd <your-repo-name>
+   ./install.sh <your-config-path>
+    ```
+   Replace <your-target-directory> with the folder where you want to clone the repository.<br>
+   Replace <your-config-path> with the path where you want the script to perform the installation (e.g., /config or another target directory).
+
+
+
+
+
 
 
 ## Code Structure
