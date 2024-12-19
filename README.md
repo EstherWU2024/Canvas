@@ -1,6 +1,6 @@
 # A simple drawing tool
 
-## Introduction
+## 1. Introduction
 This project is designed to demonstrate basic graphics concepts using Python, while also showcasing techniques such as object-oriented programming and recursion. It includes features such as:
 - **Create a Canvas**: Generate a blank canvas by specifying width and height.
 - **Draw a line**: Only support horizontal and vertical lines by giving two pairs of coordinates.
@@ -8,14 +8,14 @@ This project is designed to demonstrate basic graphics concepts using Python, wh
 - **Bucket fill**: Fill an area that connected to a given point (x,y) with a specified color.
 - **Interactive Commands**: Provide commands in a user-friendly manner to draw and manipulate the canvas.
 
-## Installation
+## 2. Installation
 Follow the steps below to set up the project on your local machine:
-### 1. Prerequisites
+### 2.1. Prerequisites
 Before installing, make sure you have the following installed on your system:
 - **Python 3.6+**: You can download it from [python.org](https://www.python.org/downloads/).
 - **Git** (optional): To clone the repository. You can download it from [git-scm.com](https://git-scm.com/).
 ---
-### 2. Clone the Repository
+### 2.2. Clone the Repository
 1. Open a terminal or command prompt.
 2. Run the following command to clone the project repository:
    ```bash
@@ -27,11 +27,11 @@ Before installing, make sure you have the following installed on your system:
    Replace <your-target-directory> with the folder where you want to clone the repository.<br>
    Replace <your-config-path> with the path where you want the script to perform the installation (e.g., /config or another target directory).
 
-## Code Structure
+## 3. Code Structure
 
 The program is organized into the following components:
 
-### **1. `Canvas` Class**
+### **3.1. `Canvas` Class**
 The `Canvas` class encapsulates all the operations related to drawing and manipulating the canvas. It contains methods to create, display, and modify the canvas.
 
 - **Attributes:**
@@ -48,7 +48,7 @@ The `Canvas` class encapsulates all the operations related to drawing and manipu
   - `fill(self, x, y, c)`: Implements the bucket-fill operation using a recursive flood-fill algorithm.
 ---
 
-### **2. `main` Function**
+### **3.2. `main` Function**
 The `main` function provides the entry point for the program. It sets up the command-line interface and handles user inputs.
 
 - **Key Responsibilities:**
@@ -64,7 +64,7 @@ The `main` function provides the entry point for the program. It sets up the com
   - `Q`: Exits the program.
 ---
 
-### **3. Command Handlers**
+### **3.3. Command Handlers**
 The program uses a dictionary to map command types to specific handler functions:
 - `create_canvas`: Initializes a new canvas.
 - `draw_line`: Draws a line on the canvas.
@@ -76,14 +76,14 @@ Each handler function validates the input, performs the requested operation, and
 
 ---
 
-### **4. Recursive Flood-Fill Algorithm**
+### **3.4. Recursive Flood-Fill Algorithm**
 The `fill(self, x, y, c)` method uses recursion to implement the bucket-fill feature:
 - It starts from a given point `(x, y)`.
 - It recursively fills all connected blank spaces with the specified character `c`.
 - The algorithm stops when it encounters the canvas boundary or a previously filled region.
 
 
-## Available Commands
+## 4. Available Commands
 
 The program supports the following commands:
 
@@ -97,7 +97,7 @@ The program supports the following commands:
 
 ---
 
-## Example Usage
+## 5. Example Usage
 
 Below are some examples demonstrating how to use the program:
 
@@ -131,7 +131,7 @@ Command: Q <br>
 Output: <br>
 ![Quit](image/Q.png)
 
-## Input Validation and Error Messages
+## 6. Input Validation and Error Messages
 
 The program includes robust input validation to ensure that all commands and parameters are entered correctly. If an error occurs, the program will print an appropriate error message. Below are the common checks performed and their corresponding error messages:
 
