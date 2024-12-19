@@ -137,31 +137,31 @@ The program includes robust input validation to ensure that all commands and par
 
 ### 1. General Input Errors
 - **Invalid Command**: If a user enters an unrecognized command, the program will display:<br>
-Undefined command type. Please use C, L, R, B, or Q.
+*Undefined command type. Please use C, L, R, B, or Q.*
 - **Coordinates Out of Bounds**: If any part of the pattern is outside the canvas boundaries, the program will display: <br>
-Error: Coordinates are out of canvas bounds.
+*Error: Coordinates are out of canvas bounds.*
 
 ### 2. Canvas Creation (`C w h`)
 - **Missing or Invalid Parameters**: If the width (`w`) or height (`h`) is not provided or is not a positive integer, the program will display: <br>
-Please enter positive integers for width and height.
+*Please enter positive integers for width and height.*
 
 ### 3. Drawing a Line (`L x1 y1 x2 y2`)
 - **Missing or Invalid Parameters**: If the coordinates (`x1`, `y1`, `x2`, `y2`) are not provided or out of range or invalid, the program will display: <br>
-Invalid parameters, please use: L x1 y1 x2 y2.
-- **Program limitation**: If the line is neighter vertical line nor horizontal line, the program will display:
-Error: Only horizontal or vertical lines are supported.
+*Invalid parameters, please use: L x1 y1 x2 y2.*
+- **Program limitation**: If the line is neighter vertical line nor horizontal line, the program will display:<br>
+*Error: Only horizontal or vertical lines are supported.*
 
 ### 4. Drawing a Rectangle (`R x1 y1 x2 y2`)
 - **Missing or Invalid Parameters**: If the rectangle coordinates are not provided or out of range or invalid, the program will display: <br>
-Invalid parameters, please use: R x1 y1 x2 y2.
+*Invalid parameters, please use: R x1 y1 x2 y2.*
 
 ### 5. Bucket Fill (`B x y c`)
 - **Missing or Invalid Parameters**: If the coordinates (`x`, `y`) are not provided or are not integers, or if the fill character (`c`) is missing, the program will display: <br>
-Invalid parameters, please use: B x y c.
+*Invalid parameters, please use: B x y c.*
 
 ### 6. General Usage Errors
-- **Canvas Not Created**: If the user attempts to draw a line, rectangle, or perform a fill operation without first creating a canvas, the program will display:
-Error: No canvas found. Create a canvas first.
+- **Canvas Not Created**: If the user attempts to draw a line, rectangle, or perform a fill operation without first creating a canvas, the program will display: <br>
+*Error: No canvas found. Create a canvas first.*
 
 ---
 
@@ -189,7 +189,7 @@ B 5 5
 
 Output:
 Invalid parameters, please use: B x y c.
-
+![error](image/error_type.png)
 
 
 
