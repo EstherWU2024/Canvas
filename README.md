@@ -102,46 +102,66 @@ The program supports the following commands:
 Below are some examples demonstrating how to use the program:
 
 ### Example 1: Creating a Canvas
-Command:
+Command: C 20 4 <br>
+Output:<br>
+![creat cancas](image/C，20，4.png)
+
+### Example 2: Drawing a Line
+Command: L 1 2 6 2 <br>
+Output:<br>
+![line1](image/L,1,2,6,2.png)
+
+### Example 3: Drawing a vertical line
+Command: L 6 3 6 4 <br>
+Output:<br>
+![line1](image/L,6,3,6,4.png)
+
+### Example 4: Drawing a Rectangle
+Command: R 14 1 18 3 <br>
+Output:<br>
+![rectangle](image/R14.png)
+
+### Example 5: Bucket Fill
+Command: B 10 3 o | B 2 4 p <br>
+Output: <br>
+![Busket fill output](image/B.png)
+
+### Example 6: Quit program
+Command: Q <br>
+Output: <br>
+![Quit](image/Q.png)
 
 ## Input Validation and Error Messages
 
 The program includes robust input validation to ensure that all commands and parameters are entered correctly. If an error occurs, the program will print an appropriate error message. Below are the common checks performed and their corresponding error messages:
 
 ### 1. General Input Errors
-- **Invalid Command**: If a user enters an unrecognized command, the program will display:
-Error: Invalid command. Please enter a valid command.
+- **Invalid Command**: If a user enters an unrecognized command, the program will display:<br>
+Undefined command type. Please use C, L, R, B, or Q.
+- **Coordinates Out of Bounds**: If any part of the pattern is outside the canvas boundaries, the program will display: <br>
+Error: Coordinates are out of canvas bounds.
 
 ### 2. Canvas Creation (`C w h`)
-- **Missing or Invalid Parameters**: If the width (`w`) or height (`h`) is not provided or is not a positive integer, the program will display:
-Error: Canvas dimensions must be positive integers.
+- **Missing or Invalid Parameters**: If the width (`w`) or height (`h`) is not provided or is not a positive integer, the program will display: <br>
+Please enter positive integers for width and height.
 
 ### 3. Drawing a Line (`L x1 y1 x2 y2`)
-- **Missing or Invalid Parameters**: If the coordinates (`x1`, `y1`, `x2`, `y2`) are not provided or are not integers, the program will display:
-Error: Line coordinates must be integers.
-- **Coordinates Out of Bounds**: If the line extends beyond the canvas boundaries, the program will display:
+- **Missing or Invalid Parameters**: If the coordinates (`x1`, `y1`, `x2`, `y2`) are not provided or out of range or invalid, the program will display: <br>
+Invalid parameters, please use: L x1 y1 x2 y2.
+- **Program limitation**: If the line is neighter vertical line nor horizontal line, the program will display:
 Error: Only horizontal or vertical lines are supported.
 
 ### 4. Drawing a Rectangle (`R x1 y1 x2 y2`)
-- **Missing or Invalid Parameters**: If the rectangle coordinates are not provided or are not integers, the program will display:
-Error: Rectangle coordinates must be integers.
-
-- **Coordinates Out of Bounds**: If any part of the rectangle is outside the canvas boundaries, the program will display:
-Error: Rectangle coordinates must be within the canvas.
-
+- **Missing or Invalid Parameters**: If the rectangle coordinates are not provided or out of range or invalid, the program will display: <br>
+Invalid parameters, please use: R x1 y1 x2 y2.
 
 ### 5. Bucket Fill (`B x y c`)
-- **Missing or Invalid Parameters**: If the coordinates (`x`, `y`) are not provided or are not integers, or if the fill character (`c`) is missing, the program will display:
-Error: Fill coordinates must be integers, and fill character must be a single character.
-
-- **Coordinates Out of Bounds**: If the starting point (`x`, `y`) is outside the canvas boundaries, the program will display:
-Error: Fill coordinates must be within the canvas.
-
+- **Missing or Invalid Parameters**: If the coordinates (`x`, `y`) are not provided or are not integers, or if the fill character (`c`) is missing, the program will display: <br>
+Invalid parameters, please use: B x y c.
 
 ### 6. General Usage Errors
 - **Canvas Not Created**: If the user attempts to draw a line, rectangle, or perform a fill operation without first creating a canvas, the program will display:
-Error: Please create a canvas first using the 'C' command.
-
+Error: No canvas found. Create a canvas first.
 
 ---
 
@@ -152,7 +172,7 @@ Input:
 X 10 10
 
 Output:
-Error: Invalid command. Please enter a valid command.
+Undefined command type. Please use C, L, R, B, or Q.
 
 
 #### Scenario 2: Line Coordinates Out of Bounds
@@ -160,7 +180,7 @@ Input:
 L 1 1 50 1
 
 Output:
-Error: Line coordinates must be within the canvas.
+Error: Coordinates are out of canvas bounds.
 
 
 #### Scenario 3: Fill with Missing Character
@@ -168,7 +188,7 @@ Input:
 B 5 5
 
 Output:
-Error: Fill coordinates must be integers, and fill character must be a single character.
+Invalid parameters, please use: B x y c.
 
 
 
