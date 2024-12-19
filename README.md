@@ -20,18 +20,12 @@ Before installing, make sure you have the following installed on your system:
 2. Run the following command to clone the project repository:
    ```bash
    cd <your-target-directory>
-   git clone https://github.com/<your-username>/<your-repo-name>.git
-   cd <your-repo-name>
+   git clone https://github.com/EstherWU2024/Canvas.git
+   cd Canvas
    ./install.sh <your-config-path>
     ```
    Replace <your-target-directory> with the folder where you want to clone the repository.<br>
    Replace <your-config-path> with the path where you want the script to perform the installation (e.g., /config or another target directory).
-
-
-
-
-
-
 
 ## Code Structure
 
@@ -52,6 +46,7 @@ The `Canvas` class encapsulates all the operations related to drawing and manipu
   - `line(self, x1, y1, x2, y2, is_show)`: Draws a horizontal or vertical line on the canvas.
   - `rectangle(self, x1, y1, x2, y2)`: Draws a rectangle by combining four lines.
   - `fill(self, x, y, c)`: Implements the bucket-fill operation using a recursive flood-fill algorithm.
+---
 
 ### **2. `main` Function**
 The `main` function provides the entry point for the program. It sets up the command-line interface and handles user inputs.
@@ -67,6 +62,7 @@ The `main` function provides the entry point for the program. It sets up the com
   - `R x1 y1 x2 y2`: Draws a rectangle with the upper-left corner at `(x1, y1)` and bottom-right corner at `(x2, y2)`.
   - `B x y c`: Fills the area connected to `(x, y)` with the character `c`.
   - `Q`: Exits the program.
+---
 
 ### **3. Command Handlers**
 The program uses a dictionary to map command types to specific handler functions:
@@ -78,13 +74,14 @@ The program uses a dictionary to map command types to specific handler functions
 
 Each handler function validates the input, performs the requested operation, and handles any errors.
 
+---
+
 ### **4. Recursive Flood-Fill Algorithm**
 The `fill(self, x, y, c)` method uses recursion to implement the bucket-fill feature:
 - It starts from a given point `(x, y)`.
 - It recursively fills all connected blank spaces with the specified character `c`.
 - The algorithm stops when it encounters the canvas boundary or a previously filled region.
 
----
 
 ## Available Commands
 
