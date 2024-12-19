@@ -18,7 +18,8 @@ Before installing, make sure you have the following installed on your system:
 ### 2. Clone the Repository
 1. Open a terminal or command prompt.
 2. Run the following command to clone the project repository:
-git clone <repository-url>
+git clone https://github.com/EstherWU2024/Canvas.git
+---
 
 
 ## Code Structure
@@ -74,7 +75,93 @@ The `fill(self, x, y, c)` method uses recursion to implement the bucket-fill fea
 
 ---
 
-If you have specific formatting requirements or need additional details about the code structure, let me know!
+## Available Commands
+
+The program supports the following commands:
+
+| Command         | Description                                                                                  | Example                     |
+|-----------------|----------------------------------------------------------------------------------------------|-----------------------------|
+| `C w h`         | Create a new canvas of width `w` and height `h`.                                             | `C 20 4`                   |
+| `L x1 y1 x2 y2` | Draw a line from `(x1, y1)` to `(x2, y2)`. Only horizontal or vertical lines are supported.   | `L 1 2 6 2`                |
+| `R x1 y1 x2 y2` | Draw a rectangle with the upper-left corner at `(x1, y1)` and bottom-right corner at `(x2, y2)`. | `R 14 1 18 3`           |
+| `B x y c`       | Fill the area connected to `(x, y)` with the character `c`.                                  | `B 10 3 o`                 |
+| `Q`             | Quit the program.                                                                            | `Q`                         |
+
+---
+
+## Example Usage
+
+Below are some examples demonstrating how to use the program:
+
+### Example 1: Creating a Canvas
+Command:
+
+## Input Validation and Error Messages
+
+The program includes robust input validation to ensure that all commands and parameters are entered correctly. If an error occurs, the program will print an appropriate error message. Below are the common checks performed and their corresponding error messages:
+
+### 1. General Input Errors
+- **Invalid Command**: If a user enters an unrecognized command, the program will display:
+Error: Invalid command. Please enter a valid command.
+
+### 2. Canvas Creation (`C w h`)
+- **Missing or Invalid Parameters**: If the width (`w`) or height (`h`) is not provided or is not a positive integer, the program will display:
+Error: Canvas dimensions must be positive integers.
+
+### 3. Drawing a Line (`L x1 y1 x2 y2`)
+- **Missing or Invalid Parameters**: If the coordinates (`x1`, `y1`, `x2`, `y2`) are not provided or are not integers, the program will display:
+Error: Line coordinates must be integers.
+- **Coordinates Out of Bounds**: If the line extends beyond the canvas boundaries, the program will display:
+Error: Only horizontal or vertical lines are supported.
+
+### 4. Drawing a Rectangle (`R x1 y1 x2 y2`)
+- **Missing or Invalid Parameters**: If the rectangle coordinates are not provided or are not integers, the program will display:
+Error: Rectangle coordinates must be integers.
+
+- **Coordinates Out of Bounds**: If any part of the rectangle is outside the canvas boundaries, the program will display:
+Error: Rectangle coordinates must be within the canvas.
+
+
+### 5. Bucket Fill (`B x y c`)
+- **Missing or Invalid Parameters**: If the coordinates (`x`, `y`) are not provided or are not integers, or if the fill character (`c`) is missing, the program will display:
+Error: Fill coordinates must be integers, and fill character must be a single character.
+
+- **Coordinates Out of Bounds**: If the starting point (`x`, `y`) is outside the canvas boundaries, the program will display:
+Error: Fill coordinates must be within the canvas.
+
+
+### 6. General Usage Errors
+- **Canvas Not Created**: If the user attempts to draw a line, rectangle, or perform a fill operation without first creating a canvas, the program will display:
+Error: Please create a canvas first using the 'C' command.
+
+
+---
+
+### Example Error Scenarios
+
+#### Scenario 1: Invalid Command
+Input:
+X 10 10
+
+Output:
+Error: Invalid command. Please enter a valid command.
+
+
+#### Scenario 2: Line Coordinates Out of Bounds
+Input:
+L 1 1 50 1
+
+Output:
+Error: Line coordinates must be within the canvas.
+
+
+#### Scenario 3: Fill with Missing Character
+Input:
+B 5 5
+
+Output:
+Error: Fill coordinates must be integers, and fill character must be a single character.
+
 
 
 
