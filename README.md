@@ -18,7 +18,10 @@ Before installing, make sure you have the following installed on your system:
 ### 2. Clone the Repository
 1. Open a terminal or command prompt.
 2. Run the following command to clone the project repository:
-git clone https://github.com/EstherWU2024/Canvas.git
+cd /my/projects
+git clone https://github.com/username/my-awesome-project.git
+cd my-awesome-project
+./install.sh /my/projects/config
 ---
 
 
